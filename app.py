@@ -17,7 +17,9 @@ def index():
     global submitted_words, ip_submissions
 
     user_ip = request.remote_addr
-    user_words = ip_submissions[user_ip]
+    print(user_ip)
+    user_agent = request.headers['User-Agent']
+    user_words = ip_submissions[user_ip+user_agent]
 
     if request.method == "POST":
         if len(user_words) >= MAX_SUB:
