@@ -43,7 +43,7 @@ def wordcloud_image():
     counts = Counter(submitted_words)
 
     # Scale frequencies: each word gets size = count * 5
-    scaled_freq = {word: (count * 10 if word == HANTAR_NAME else count*2) for word, count in counts.items()}
+    scaled_freq = {word: (count * 10 if word == HANTAR_NAME else count) for word, count in counts.items()}
     print(counts.keys())
     wordcloud = WordCloud(
         width=800,
