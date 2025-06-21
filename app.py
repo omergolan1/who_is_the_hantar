@@ -9,7 +9,7 @@ submitted_words = []
 
 ip_submissions = defaultdict(list)  # Maps IP -> list of submitted words
 HANTAR_NAME = "vica"
-MAX_SUB = 5
+MAX_SUB = 3
 
 
 @app.route("/", methods=["GET", "POST"])
