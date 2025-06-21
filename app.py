@@ -59,4 +59,4 @@ def wordcloud_image():
 
 if __name__ == "__main__":
     os.makedirs("static", exist_ok=True)
-    app.run(debug=True)
+    app.run()
