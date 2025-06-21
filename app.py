@@ -16,10 +16,9 @@ MAX_SUB = 5
 def index():
     global submitted_words, ip_submissions
 
-    user_ip = request.remote_addr
+    user_ip = request.headers.get('X-Forwarded-For', request.remote_addr).split(',')[0].strip()
     print(user_ip)
-    user_agent = request.headers['User-Agent']
-    user_words = ip_submissions[user_ip+user_agent]
+    user_words = ip_submissions[user_ip]
 
     if request.method == "POST":
         if len(user_words) >= MAX_SUB:
