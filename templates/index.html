@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Who is hantar</title>
+    <meta http-equiv="refresh" content="5">
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 30px; }
+        input[type="text"] { padding: 10px; font-size: 16px; }
+        input[type="submit"] { padding: 10px 20px; font-size: 16px; }
+        img { margin-top: 20px; max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Who will be the hantar?</h1>
+
+    {% if submitted >= max_submissions %}
+        <p><strong>Thank you! You’ve reached your submission limit ({{ max_submissions }}).</strong></p>
+    {% else %}
+        <p>You can submit {{ max_submissions - submitted }} more word{{ 's' if max_submissions - submitted > 1 else '' }}.</p>
+        <form method="post">
+            <input type="text" name="word" placeholder="Enter a word" required>
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+
+    <img src="/wordcloud.png" alt="Word Cloud">
+</body>
+</html>

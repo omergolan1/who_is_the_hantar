@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: who_is_the_hantar
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    autoDeploy: true
