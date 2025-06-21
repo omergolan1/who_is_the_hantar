@@ -8,7 +8,7 @@ app = Flask(__name__)
 submitted_words = []
 
 ip_submissions = defaultdict(list)  # Maps IP -> list of submitted words
-HANTAR_NAME = "Vica"
+HANTAR_NAME = "vica"
 MAX_SUB = 5
 
 
